@@ -40,6 +40,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/values/all', async (req, res) => {
+  await pgClient.query("CREATE TABLE IF NOT EXISTS values(number INT)");
   const values = await pgClient.query('SELECT * from values');
 
   res.send(values.rows);
