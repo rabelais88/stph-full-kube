@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "rabelais/stph-react-test",
+      "image": "stephengrider/multi-client",
       "hostname": "client",
       "essential": false,
       "memory": 128
