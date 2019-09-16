@@ -10,3 +10,5 @@ script:
 
 after_success:
   - docker build -t rabelais/stph-react-test -f ./client/!prod.Dockerfile ./client
+  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_ID --pasword-stdin # DOCKER_ID and DOCKER_PASSWORD must be added on travis-ci environments
+  - docker push rabelais/stph-react-test
